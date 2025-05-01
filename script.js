@@ -143,10 +143,19 @@ B1_len_container.style.visibility="hidden";
 B2_len_container.style.visibility="hidden";
 lengths.style.visibility="hidden";  
 button.addEventListener("click", () => {
+    if(Number(R_input.value)<0.1){
+        alert("ENTER R value between 0.1 and 2");
+        R_input.value='ENTER R VALUE';
+        X_input.value='ENTER X VALUE';   
+        output.style.visibility = "hidden";
+        B1_len_container.style.visibility="hidden";
+        B2_len_container.style.visibility="hidden";
+        lengths.style.visibility="hidden";
+    }
     const itr = calc(Number(R_input.value), Number(X_input.value));
     let g = itr.g;
     let b = itr.b;
-
+    
     output.style.visibility = "visible";
     g = Number(g.toFixed(2));
     b = Number(b.toFixed(2));
@@ -187,6 +196,8 @@ stub2.addEventListener("click",()=>{
     B2_len_container.style.visibility="visible";
 })
 reset.addEventListener("click", () => {
+    R_input.value='ENTER R VALUE';
+    X_input.value='ENTER X VALUE';   
     output.style.visibility = "hidden";
     B1_len_container.style.visibility="hidden";
     B2_len_container.style.visibility="hidden";
