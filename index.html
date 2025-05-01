@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <div class="hcontainer">
     <h1>3D STUB SOLVER</h1>
+    <div class="input">
+    <h2>ENTER NORMALISED IMPEDANCE: </h2>
     <div>R: </div>
     <input type="number" id="R" placeholder="ENTER R VALUE" step="0.01">
     <div>X:</div>
     <input type="number" id="X" placeholder="ENTER X VALUE" step="0.01">
     <button id="submit">SUBMIT</button>
     <button id="reset">RESET</button>
-
-    <div id="output">
-        <h3>PARAMETERS</h3>
-
+    </div>
+    </div>
+    <div class="outputcontainer">
+    <div id="output" visibility="hidden">
+        <h2>PARAMETERS</h2>
+        <div id="pcontainer">
         <span>g: </span>
         <span id="g"></span><br>
 
@@ -30,7 +34,35 @@
 
         <span>B2: </span>
         <span id="B2"></span>
+        </div>
     </div>
+    
+
+    <div id="lengths" visibility="hidden">
+        <h2>LENGTHS</h2>
+        <div id="B1_len">
+            <div id="B1_val">B1:  </div>
+            <span>INITIAL ANGLE:  </span><input id='a1' type="text" id="angle" autocomplete="off">
+            <button id="stub1">SUBMIT</button>
+            <span id="a1_final">FINAL ANGLE: </span>
+            <div id="B1_length_container" visibility="hidden">
+            <div id="B1_length1">L1</div>
+            <div id="B1_length2">L2</div>
+            </div>
+        </div>
+        <div id="B2_len">
+            <div id="B2_val">B2:  </div>
+            <span>INITIAL ANGLE:  </span><input id='a2'  type="text" id="angle" autocomplete="off">
+            <button id="stub2">SUBMIT</button>
+            <span id="a2_final">FINAL ANGLE: </span>
+            <div id="B2_length_container" visibility="hidden">
+            <div id="B2_length1">L1</div>
+            <div id="B2_length2">L2</div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>  
 </body>
 <script src="script.js"></script>
 </html>
